@@ -10,7 +10,7 @@
 		"jqueryui": ">=1.8.16"
 	},
 	"licenses": "MIT",
-	"main": "jquery.ui.touch-punch.js",
+	"main": "jquery.ui.touch-punch.dk.js",
 	"description": "Touch Event Support for jQuery UI",
 	"keywords": ["jquery","jquery-ui","touch"],
 	"homepage": "https://github.com/khadorkin/jquery-ui-touch-punch"
