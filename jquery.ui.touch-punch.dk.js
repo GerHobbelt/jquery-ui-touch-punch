@@ -51,7 +51,6 @@
 	function simulateMouseEvent(event, simulatedType) {
 		// Ignore multi-touch events
 		if ((!pointerEnabled && event.originalEvent.touches.length > 1) || (pointerEnabled && !event.isPrimary)) return;
-//		event.preventDefault();
 		var touch = pointerEnabled ? event.originalEvent : event.originalEvent.changedTouches[0]
 			, simulatedEvent = document.createEvent('MouseEvents')
 			, coord = fixTouch(touch);
