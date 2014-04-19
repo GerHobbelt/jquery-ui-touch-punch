@@ -88,7 +88,7 @@
 		// Set the flag to prevent other widgets from inheriting the touch event
 		touchHandled = true;
 		// Track movement to determine if interaction was a click
-		this._touchMoved = false;
+		this._touchMoved = 0;
 		// Simulate the mouseover event
 		simulateMouseEvent(event, 'mouseover');
 		// Simulate the mousemove event
@@ -103,8 +103,8 @@
 	mouseProto._touchMove = function(event) {
 		// Ignore event if not handled
 		if (!touchHandled) return;
-		// Interaction was not a click
-		this._touchMoved = true;
+		// Interaction was less likely to be a click
+		this._touchMoved +=1;
 		// Simulate the mousemove event
 		simulateMouseEvent(event, 'mousemove');
 	};
@@ -119,8 +119,8 @@
 		simulateMouseEvent(event, 'mouseup');
 		// Simulate the mouseout event
 		simulateMouseEvent(event, 'mouseout');
-		// If the touch interaction did not move, it should trigger a click
-		if (!this._touchMoved) simulateMouseEvent(event, 'click');
+		// If the touch interaction did not move (much), it should trigger a click
+		if (this._touchMoved <= 5) simulateMouseEvent(event, 'click');
 		// Unset the flag to allow other widgets to inherit the touch event
 		touchHandled = false;
 	};
