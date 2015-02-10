@@ -1,0 +1,16 @@
+{
+  "name": "jqueryui-touch-punch",
+  "version": "0.2.4",
+  "description": "jqueryui-touch-punch",
+  "main": "jquery.ui.touch-punch.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sugarshin/jquery-ui-touch-punch.git"
+  },
+  "author": "sugarshin",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.6",
+    "jquery-ui": ">=1.8"
+  }
+}
