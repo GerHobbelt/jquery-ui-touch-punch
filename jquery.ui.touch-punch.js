@@ -123,15 +123,15 @@
     // Simulate the mouseup event
     simulateMouseEvent(event, 'mouseup');
 
-    // Simulate the mouseout event
-    simulateMouseEvent(event, 'mouseout');
-
     // If the touch interaction did not move, it should trigger a click
     if (!this._touchMoved) {
 
       // Simulate the click event
       simulateMouseEvent(event, 'click');
     }
+
+    // Simulate the mouseout event
+    simulateMouseEvent(event, 'mouseout');
 
     // Unset the flag to allow other widgets to inherit the touch event
     touchHandled = false;
