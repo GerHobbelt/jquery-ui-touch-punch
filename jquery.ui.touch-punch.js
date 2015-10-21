@@ -38,24 +38,24 @@
 
     var touch = event.originalEvent.changedTouches[0],
         simulatedEvent = document.createEvent('MouseEvents');
-    
+
     // Initialize the simulated mouse event using the touch event's coordinates
     simulatedEvent.initMouseEvent(
       simulatedType,    // type
-      true,             // bubbles                    
-      true,             // cancelable                 
-      window,           // view                       
-      1,                // detail                     
-      touch.screenX,    // screenX                    
-      touch.screenY,    // screenY                    
-      touch.clientX,    // clientX                    
-      touch.clientY,    // clientY                    
-      false,            // ctrlKey                    
-      false,            // altKey                     
-      false,            // shiftKey                   
-      false,            // metaKey                    
-      0,                // button                     
-      null              // relatedTarget              
+      true,             // bubbles
+      true,             // cancelable
+      window,           // view
+      1,                // detail
+      touch.screenX,    // screenX
+      touch.screenY,    // screenY
+      touch.clientX,    // clientX
+      touch.clientY,    // clientY
+      false,            // ctrlKey
+      false,            // altKey
+      false,            // shiftKey
+      false,            // metaKey
+      0,                // button
+      null              // relatedTarget
     );
 
     // Dispatch the simulated event to the target element
@@ -123,15 +123,15 @@
     // Simulate the mouseup event
     simulateMouseEvent(event, 'mouseup');
 
-    // Simulate the mouseout event
-    simulateMouseEvent(event, 'mouseout');
-
     // If the touch interaction did not move, it should trigger a click
     if (!this._touchMoved) {
 
       // Simulate the click event
       simulateMouseEvent(event, 'click');
     }
+
+    // Simulate the mouseout event
+    simulateMouseEvent(event, 'mouseout');
 
     // Unset the flag to allow other widgets to inherit the touch event
     touchHandled = false;
@@ -144,7 +144,7 @@
    * original mouse event handling methods.
    */
   mouseProto._mouseInit = function () {
-    
+
     var self = this;
 
     // Delegate the touch handlers to the widget's element
